@@ -16,6 +16,5 @@ class FireArrows : JavaPlugin() {
         server.pluginManager.registerEvents(FireArrowShoot(), this)
         server.pluginManager.registerEvents(FireArrowLand(this), this)
         server.pluginManager.registerEvents(AntiTeleport(), this)
-
     }
 }

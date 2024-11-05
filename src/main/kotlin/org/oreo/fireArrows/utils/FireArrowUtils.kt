@@ -18,8 +18,19 @@ object FireArrowUtils {
     fun givePlayerFireArrow(player: Player, block: Block, plugin : FireArrows) {
 
         val particle = Particle.FLAME
-        block.world.spawnParticle(particle, block.location, 10)
-        block.world.playSound(player.location, Sound.ENTITY_BLAZE_SHOOT, 1f, 1f)
+        var particleAmount = 10
+        var pitch = 1f
+        var volume = 1f
+
+        if (fireArrowPlayerList.containsKey(player)) {
+            fireArrowPlayerList[player]?.cancel()
+            particleAmount = 5
+            pitch = 1.2f
+            volume = 0.6f
+        }
+
+        block.world.playSound(player.location, Sound.ENTITY_BLAZE_SHOOT, volume, pitch)
+        block.world.spawnParticle(particle, block.location, particleAmount)
 
 
         val runnable : BukkitTask = object : BukkitRunnable() {

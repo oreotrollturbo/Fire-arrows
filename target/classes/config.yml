@@ -1,0 +1,5 @@
+#The time it takes for the fire arrow to automatically extinguish itself
+extinguish-time : 12 #In seconds
+
+# How long the hit entity will be burning for
+brun-time : 90  #In ticks
