@@ -1,0 +1,4 @@
+name: fire-arrows
+version: '1.0-SNAPSHOT'
+main: org.oreo.fireArrows.FireArrows
+api-version: '1.21'
